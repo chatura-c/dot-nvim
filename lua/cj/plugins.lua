@@ -81,6 +81,9 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
 
+  -- git
+  use "https://github.com/lewis6991/gitsigns.nvim"
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
