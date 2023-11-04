@@ -75,6 +75,11 @@ return packer.startup(function(use)
     tag = '0.1.4'
   }
 
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
