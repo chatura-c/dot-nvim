@@ -44,11 +44,11 @@ packer.init {
 
 -- Install plugins
 return packer.startup(function(use)
-  
+
   use "wbthomason/packer.nvim"
   use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
-  
+
   -- Theme
   use "sainnhe/gruvbox-material"
 
@@ -62,12 +62,13 @@ return packer.startup(function(use)
   -- Snippets
   use "L3MON4D3/LuaSnip"--snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
- 
+
   -- LSP
   use "neovim/nvim-lspconfig"
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
   use "folke/neodev.nvim"
+  use "nvimtools/none-ls.nvim"
 
   -- Telescope
   use {
@@ -75,16 +76,47 @@ return packer.startup(function(use)
     tag = '0.1.4'
   }
 
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    -- NOTE: If you are having trouble with this installation,
+    --       refer to the README for telescope-fzf-native for more instructions.
+    build = 'make',
+    cond = function()
+      return vim.fn.executable 'make' == 1
+    end,
+  }
+
+  -- "gc" to comment visual regions/lines
+  use { 'numToStr/Comment.nvim', opts = {} }
+
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
 
+  use "folke/trouble.nvim"
+  use "nvim-tree/nvim-web-devicons"
   -- git
   use "https://github.com/lewis6991/gitsigns.nvim"
+
+  -- Explorer
+  use {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+  }
+  use "3rd/image.nvim"
+  use "MunifTanjim/nui.nvim"
+
+  -- Bufferline
+  use "akinsho/bufferline.nvim"
+
+  -- Hardtime
+  use "m4xshen/hardtime.nvim"
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
 end)
+
+

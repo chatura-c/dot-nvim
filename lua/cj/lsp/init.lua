@@ -98,5 +98,16 @@ mason_lspconfig.setup_handlers {
   end
 }
 
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+    vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics,
+    {
+        virtual_text = {
+	  spacing = 7,
+	  prefix = " 👈 ",
+	  source = "always"
+	}
+    }
+)
 
 require("cj.lsp.handlers").setup()

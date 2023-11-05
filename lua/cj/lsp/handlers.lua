@@ -41,7 +41,6 @@ M.setup = function()
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
     border = "rounded",
   })
-  print("Lsp Handlers setup completed")
 end
 
 local function lsp_highlight_document(client)

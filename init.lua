@@ -7,12 +7,14 @@ require "cj.lsp"
 require "cj.telescope"
 require "cj.treesitter"
 require "cj.gitsigns"
+require "cj.comments"
+require "cj.trouble"
+require "cj.neotree"
+require "cj.bufferline"
 
-local handle = io.popen("docker ps")
-local output = handle:read("*a")
-print(output)
 
-
-vim.ui.input({ prompt = 'Enter value for shiftwidth: ' }, function(input)
-    vim.o.shiftwidth = tonumber(input)
-end)
+-- require("hardtime").setup()
+--
+-- local handle = io.popen("docker ps")
+-- local output = handle:read("*a")
+-- print(output)

@@ -28,7 +28,7 @@ keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
 
 -- Left explorer
-keymap("n", "<leader>e", ":Lex 20<cr>", opts)
+keymap("n", "<leader>e", ":Neotree toggle<CR>", opts)
 
 -- Save
 keymap("n", "<C-s>", ":w<cr>", opts)
@@ -44,12 +44,4 @@ keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-1<CR>==", opts)
 
 
--- Highlight on yank
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', {clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = '*',
-})
+
