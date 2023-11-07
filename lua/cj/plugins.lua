@@ -111,8 +111,30 @@ return packer.startup(function(use)
   -- Bufferline
   use "akinsho/bufferline.nvim"
 
-  -- Hardtime
+  -- Dashboard
+  use {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+      -- config
+    }
+    end,
+  }
+
+  -- Terminal
+  use "akinsho/toggleterm.nvim"
+
+  -- Debugger
+  use "mfussenegger/nvim-dap"
+  use "rcarriga/nvim-dap-ui"
+
+
+  -- Practice
+  use "ThePrimeagen/vim-be-good"
   use "m4xshen/hardtime.nvim"
+
+
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

@@ -44,4 +44,5 @@ keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-1<CR>==", opts)
 
 
-
+-- Remove highlighting of searches
+keymap("n", "<leader>z", ":noh<CR>", opts)

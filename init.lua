@@ -11,7 +11,8 @@ require "cj.comments"
 require "cj.trouble"
 require "cj.neotree"
 require "cj.bufferline"
-
+-- require "cj.terminal"
+require "cj.dap"
 
 -- require("hardtime").setup()
 --
