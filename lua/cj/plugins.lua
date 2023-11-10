@@ -51,6 +51,11 @@ return packer.startup(function(use)
 
   -- Theme
   use "sainnhe/gruvbox-material"
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
 
   -- Auto completion
   use 'hrsh7th/cmp-nvim-lsp'
