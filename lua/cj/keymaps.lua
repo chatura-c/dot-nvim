@@ -13,7 +13,7 @@ vim.g.maplocalleader = " "
 keymap("n", "<C-\\>", ":vsplit<cr>", opts)
 
 -- Close window
-keymap("n", "<C-w>", ":q<cr>", opts)
+keymap("n", "<C-w>", ":bd<cr>", opts)
 
 -- Jumping windows
 keymap("n", "<C-Left>", "<C-w>h", opts)

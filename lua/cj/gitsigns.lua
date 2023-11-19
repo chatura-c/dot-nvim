@@ -63,12 +63,12 @@ require('gitsigns').setup {
     end, {expr=true})
 
     -- Actions
-    map('n', '<leader>hs', gs.stage_hunk)
-    map('n', '<leader>hr', gs.reset_hunk)
-    map('v', '<leader>hs', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
-    map('v', '<leader>hr', function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
-    map('n', '<leader>hS', gs.stage_buffer)
-    map('n', '<leader>hu', gs.undo_stage_hunk)
+    map('n', '<leader>hs', gs.stage_hunk, {desc = "Stage hunk"})
+    map('n', '<leader>hr', gs.reset_hunk, {desc = "Restore hunk"})
+    map('v', '<leader>hs', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end, {desc = "Stage line"})
+    map('v', '<leader>hr', function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end, {desc = "Restore hunk"})
+    map('n', '<leader>hS', gs.stage_buffer, {desc = "Stage buffer"})
+    map('n', '<leader>hu', gs.undo_stage_hunk, {desc = "Undo stage hunk"})
     map('n', '<leader>hR', gs.reset_buffer)
     map('n', '<leader>hp', gs.preview_hunk)
     map('n', '<leader>hb', function() gs.blame_line{full=true} end)
